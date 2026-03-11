@@ -47,8 +47,11 @@ export default function SearchPage() {
   }, [isSearching]);
 
   return (
-    <section className="size-full relative" data-testid="search-detail">
-      <div className="flex gap-3 w-full bg-bg-base">
+    <section
+      className="page-surface size-full relative overflow-hidden"
+      data-testid="search-detail"
+    >
+      <div className="flex h-full w-full gap-3 bg-transparent">
         <div className="flex-1">
           {!isSearching && (
             <div className="animate-fade-in-down">

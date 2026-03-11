@@ -71,9 +71,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           type={isPasswordInput && showPassword ? 'text' : type}
           className={cn(
             'peer/input',
-            'flex h-8 w-full rounded-md border-0.5 border-border-button bg-bg-input px-3 py-2 outline-none text-sm text-text-primary',
+            'flex h-10 w-full rounded-xl border border-border-button bg-bg-input px-3.5 py-2.5 outline-none text-sm text-text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm',
             'file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-text-disabled',
-            'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent-primary',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/35 focus-visible:border-accent-primary/35',
             'disabled:cursor-not-allowed disabled:opacity-50 transition-colors',
             type === 'number' &&
               '[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none',

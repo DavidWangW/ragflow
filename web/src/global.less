@@ -23,6 +23,190 @@ body,
   padding: 0;
 }
 
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  font-family:
+    var(--font-sans),
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+.app-shell {
+  position: relative;
+}
+
+.app-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0) 14%
+  );
+  opacity: 0.9;
+}
+
+html.dark .app-shell::before {
+  background: linear-gradient(
+    180deg,
+    rgba(132, 212, 255, 0.08) 0%,
+    rgba(132, 212, 255, 0) 14%
+  );
+}
+
+.app-header-shell,
+.page-surface,
+.surface-card {
+  background: var(--surface-elevated);
+  box-shadow: var(--surface-shadow);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.app-header-shell {
+  border: 1px solid var(--border-button);
+  box-shadow: var(--header-shadow);
+}
+
+.page-surface {
+  border: 1px solid var(--border-button);
+  border-radius: 28px;
+}
+
+.surface-card {
+  border-color: var(--border-button);
+}
+
+.surface-card:hover {
+  background: var(--surface-elevated-hover);
+  transform: translateY(-2px);
+}
+
+.brand-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  border: 1px solid var(--hero-badge-border);
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgb(var(--accent-primary) / 0.24),
+      transparent 58%
+    ),
+    var(--hero-badge-bg);
+  box-shadow: 0 16px 36px rgb(var(--accent-primary) / 0.16);
+}
+
+.brand-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: rgb(var(--text-primary));
+}
+
+.brand-subtitle {
+  margin-top: 2px;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--text-secondary));
+}
+
+.lab-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--hero-badge-border);
+  background: var(--hero-badge-bg);
+  color: rgb(var(--text-primary));
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-title-gradient {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--accent-primary)) 0%,
+    #5a70ff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tech-nav-shell {
+  border: 1px solid var(--border-button);
+  background: var(--surface-elevated);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    var(--header-shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.tech-nav-indicator {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--accent-primary)) 0%,
+    #4b5eff 100%
+  );
+  box-shadow: 0 14px 30px rgb(var(--accent-primary) / 0.2);
+}
+
+.tech-theme-toggle {
+  border: 1px solid var(--border-button);
+  background: var(--hero-badge-bg);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.tech-theme-toggle:hover {
+  border-color: rgb(var(--accent-primary) / 0.3);
+}
+
+.login-branding {
+  text-shadow: 0 10px 30px rgb(var(--accent-primary) / 0.2);
+}
+
+.login-panel {
+  background: var(--surface-elevated);
+  box-shadow: var(--surface-shadow);
+  border: 1px solid var(--border-button);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+::selection {
+  background: rgb(var(--accent-primary) / 0.18);
+  color: rgb(var(--text-primary));
+}
+
 .vue-office-excel {
   height: 100%;
 }
@@ -35,16 +219,16 @@ body,
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgb(219, 218, 218);
+  background: var(--bg-card);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #aaaaaa;
+  background: rgb(var(--accent-primary) / 0.22);
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #888;
+  background: rgb(var(--accent-primary) / 0.38);
 }

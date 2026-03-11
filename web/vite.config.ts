@@ -6,6 +6,9 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { appName } from './src/conf.json';
 
+const ensureTrailingSlash = (target: string) =>
+  target.endsWith('/') ? target : `${target}/`;
+
 // Inject code location data attributes for react-dev-inspector
 const inspectorBabelPlugin = (): import('vite').Plugin => ({
   name: 'inspector-babel',
@@ -29,6 +32,12 @@ const inspectorBabelPlugin = (): import('vite').Plugin => ({
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
+  const apiProxyTarget = ensureTrailingSlash(
+    env.VITE_API_PROXY_TARGET || 'http://127.0.0.1:9380',
+  );
+  const adminProxyTarget = ensureTrailingSlash(
+    env.VITE_ADMIN_PROXY_TARGET || 'http://127.0.0.1:9381',
+  );
 
   return {
     plugins: [
@@ -87,12 +96,12 @@ export default defineConfig(({ mode }) => {
       },
       proxy: {
         '/api/v1/admin': {
-          target: 'http://127.0.0.1:9381/',
+          target: adminProxyTarget,
           changeOrigin: true,
           ws: true,
         },
         '/api': {
-          target: 'http://127.0.0.1:9380/',
+          target: apiProxyTarget,
           changeOrigin: true,
           ws: true,
         },
@@ -112,7 +121,7 @@ export default defineConfig(({ mode }) => {
         //           ws: true,
         //         },
         '/v1': {
-          target: 'http://127.0.0.1:9380/',
+          target: apiProxyTarget,
           changeOrigin: true,
           ws: true,
         },

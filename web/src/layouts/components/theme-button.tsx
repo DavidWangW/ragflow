@@ -9,9 +9,9 @@ export default function ThemeButton() {
 
   return (
     <Button
-      variant="ghost"
-      size="icon"
-      className="relative"
+      variant="outline"
+      size="icon-lg"
+      className="tech-theme-toggle relative"
       onClick={() =>
         setTheme(theme === ThemeEnum.Dark ? ThemeEnum.Light : ThemeEnum.Dark)
       }

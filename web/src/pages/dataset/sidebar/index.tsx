@@ -72,7 +72,7 @@ export function SideBar({ refreshCount }: PropType) {
   }, [t, routerData]);
 
   return (
-    <aside className="w-64 relative px-5 space-y-8">
+    <aside className="page-surface relative w-full space-y-8 px-5 py-6">
       <header
         className="grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-3"
         style={{
@@ -120,8 +120,9 @@ export function SideBar({ refreshCount }: PropType) {
               asLink
               variant="ghost"
               className={cn(
-                'w-full justify-start gap-2.5 px-3 relative h-10 text-base',
-                active && 'bg-bg-card text-text-primary',
+                'w-full justify-start gap-2.5 px-3.5 relative h-11 text-base rounded-2xl',
+                active &&
+                  'bg-[linear-gradient(135deg,rgb(var(--accent-primary)/0.16)_0%,rgba(77,103,255,0.12)_100%)] text-text-primary border border-accent-primary/20',
               )}
               to={`${Routes.DatasetBase}${item.key}/${id}`}
             >

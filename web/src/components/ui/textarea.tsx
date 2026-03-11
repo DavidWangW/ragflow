@@ -10,8 +10,10 @@ import {
   useRef,
   useState,
 } from 'react';
-interface TextareaProps
-  extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'autoSize'> {
+interface TextareaProps extends Omit<
+  TextareaHTMLAttributes<HTMLTextAreaElement>,
+  'autoSize'
+> {
   autoSize?: {
     minRows?: number;
     maxRows?: number;
@@ -89,15 +91,16 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <textarea
         className={cn(
-          'flex min-h-[80px] w-full bg-bg-input rounded-md border border-border-button px-3 py-2 text-base ring-offset-background placeholder:text-text-disabled focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+          'flex min-h-[80px] w-full bg-bg-input rounded-2xl border border-border-button px-4 py-3 text-base shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm ring-offset-background placeholder:text-text-disabled focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/35 focus-visible:border-accent-primary/35 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
           resizable ? 'overflow-auto' : 'overflow-hidden',
           className,
         )}
         rows={autoSize?.minRows ?? props.rows ?? undefined}
         style={{
-          maxHeight: autoSize?.maxRows && !resizable
-            ? `${autoSize.maxRows * 20}px`
-            : undefined,
+          maxHeight:
+            autoSize?.maxRows && !resizable
+              ? `${autoSize.maxRows * 20}px`
+              : undefined,
           resize,
         }}
         ref={textareaRef}

@@ -116,6 +116,26 @@ function Root({ children }: React.PropsWithChildren) {
           token: {
             fontFamily:
               "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif",
+            colorPrimary: 'rgb(var(--accent-primary))',
+            colorInfo: 'rgb(var(--accent-primary))',
+            colorSuccess: 'rgb(var(--state-success))',
+            colorWarning: 'rgb(var(--state-warning))',
+            colorError: 'rgb(var(--state-error))',
+            colorText: 'rgb(var(--text-primary))',
+            colorTextSecondary: 'rgb(var(--text-secondary))',
+            colorBorder: 'var(--border-default)',
+            colorBgBase: 'var(--bg-base)',
+            colorBgContainer: 'var(--bg-component)',
+            colorBgElevated: 'var(--bg-component)',
+            colorFillSecondary: 'var(--bg-card)',
+            controlOutline: 'rgb(var(--accent-primary) / 0.32)',
+            borderRadius: 18,
+            borderRadiusLG: 24,
+            wireframe: false,
+            boxShadowSecondary:
+              themeragflow === 'dark'
+                ? '0 24px 72px rgba(0, 0, 0, 0.46)'
+                : '0 24px 72px rgba(18, 55, 92, 0.14)',
           },
           algorithm:
             themeragflow === 'dark'

@@ -24,6 +24,12 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import {
+  APP_NAME,
+  APP_SUBTITLE,
+  APP_TAGLINE,
+  APP_TECH_LABEL,
+} from '@/constants/branding';
 import { cn } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -69,7 +75,7 @@ function LoginFormContent({
           {title === 'login' ? t('loginTitle') : t('signUpTitle')}
         </h2>
       </div>
-      <div className=" w-full max-w-[540px] bg-bg-component backdrop-blur-sm rounded-2xl shadow-xl pt-14 pl-10 pr-10 pb-2 border border-border-button ">
+      <div className="login-panel w-full max-w-[540px] rounded-[28px] pt-14 pl-10 pr-10 pb-2">
         {!disablePasswordLogin && (
           <Form {...form}>
             <form
@@ -363,18 +369,29 @@ const Login = () => {
 
         <div className="z-20 absolute top-3 flex flex-col items-center mb-12 w-full text-text-primary">
           <div className="flex items-center mb-4 w-full pl-10 pt-10 ">
-            <div className="w-12 h-12 p-2 rounded-lg flex items-center justify-center mr-3">
+            <div className="brand-mark w-14 h-14 p-2 flex items-center justify-center mr-4">
               <img
                 src={'/logo.svg'}
-                alt="logo"
-                className="size-8 mr-[12] cursor-pointer"
+                alt={APP_NAME}
+                className="size-8 cursor-pointer"
               />
             </div>
-            <div className="text-xl font-bold self-center">RAGFlow</div>
+            <div className="login-branding">
+              <div className="brand-title text-xl">{APP_NAME}</div>
+              <div className="brand-subtitle hidden md:block">
+                {APP_SUBTITLE}
+              </div>
+            </div>
           </div>
-          <h1 className="text-[36px] font-medium  text-center mb-2">
-            {t('title')}
+          <h1 className="text-[36px] font-semibold text-center mb-2 page-title-gradient">
+            {APP_NAME}
           </h1>
+          <p className="text-sm uppercase tracking-[0.22em] text-text-secondary text-center">
+            {APP_TECH_LABEL}
+          </p>
+          <p className="mt-3 max-w-3xl px-6 text-center text-base text-text-secondary">
+            {APP_TAGLINE}
+          </p>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[1050px] px-4 sm:px-6 lg:px-8">
           {/* Login Form */}

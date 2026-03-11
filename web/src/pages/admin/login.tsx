@@ -33,6 +33,7 @@ import authorizationUtil from '@/utils/authorization-util';
 
 import { login } from '@/services/admin-service';
 
+import { APP_NAME, APP_SUBTITLE } from '@/constants/branding';
 import ThemeSwitch from '../../components/theme-switch';
 import { BgSvg } from '../login-next/bg';
 
@@ -136,18 +137,25 @@ function AdminLogin() {
 
         <div className="absolute top-3 left-0 w-full">
           <div className="absolute mt-12 ml-12 flex items-center">
-            <img className="size-8 mr-5" src="/logo.svg" alt="logo" />
-            <span className="text-xl font-bold">RAGFlow</span>
+            <div className="brand-mark mr-5 flex size-12 items-center justify-center">
+              <img className="size-8" src="/logo.svg" alt={APP_NAME} />
+            </div>
+            <div className="login-branding">
+              <div className="brand-title text-xl">{APP_NAME}</div>
+              <div className="brand-subtitle hidden md:block">
+                {APP_SUBTITLE}
+              </div>
+            </div>
           </div>
 
-          <h1 className="mt-[6.5rem] text-4xl font-medium text-center mb-12">
+          <h1 className="mt-[6.5rem] text-4xl font-medium text-center mb-12 page-title-gradient">
             {t('loginTitle', { keyPrefix: 'admin' })}
           </h1>
         </div>
 
         <div className="flex items-center justify-center w-screen">
           <div className="w-full max-w-[540px] mt-72 mb-48">
-            <Card className="w-full bg-bg-component rounded-2xl shadow-none backdrop-blur-sm">
+            <Card className="login-panel w-full rounded-[28px] shadow-none">
               <CardContent className="px-10 pt-14 pb-10">
                 <Form {...form}>
                   <form

@@ -9,7 +9,7 @@ export default function DatasetWrapper() {
 
   return (
     <KnowledgeBaseProvider knowledgeBase={data} loading={loading}>
-      <article className="pt-3 size-full grid grid-cols-[auto_1fr] grid-rows-1">
+      <article className="size-full grid grid-cols-[280px_1fr] grid-rows-1 gap-5 overflow-hidden pt-1">
         <SideBar />
 
         <Outlet />

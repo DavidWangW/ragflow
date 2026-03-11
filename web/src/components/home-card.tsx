@@ -44,7 +44,7 @@ export function HomeCard({
         onClick?.();
       }}
       tabIndex={0}
-      className="px-2.5 py-4 flex gap-2 items-start group h-full w-full hover:shadow-md"
+      className="px-3 py-4 flex gap-3 items-start group h-full w-full hover:-translate-y-1 hover:border-accent-primary/20"
     >
       <div>
         <RAGFlowAvatar
@@ -78,7 +78,7 @@ export function HomeCard({
             <section className="flex justify-between"></section>
 
             <section className="flex flex-col gap-1 mt-1">
-              <div className="whitespace-nowrap overflow-hidden text-ellipsis">
+              <div className="whitespace-nowrap overflow-hidden text-ellipsis text-text-secondary">
                 {data.description}
               </div>
               <div className="flex justify-between items-center">

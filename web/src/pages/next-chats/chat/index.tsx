@@ -107,7 +107,10 @@ export default function Chat() {
 
   return (
     <RootLayoutContainer>
-      <section className="h-full flex flex-col" data-testid="chat-detail">
+      <section
+        className="page-surface h-full flex flex-col overflow-hidden"
+        data-testid="chat-detail"
+      >
         <article className="flex flex-1 min-h-0 pb-9">
           <Sessions handleConversationCardClick={handleSessionClick}></Sessions>
 

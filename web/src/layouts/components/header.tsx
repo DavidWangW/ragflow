@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { APP_NAME, APP_SUBTITLE } from '@/constants/branding';
 import { LanguageList, LanguageMap } from '@/constants/common';
 import { useChangeLanguage } from '@/hooks/logic-hooks';
 import {
@@ -59,12 +60,26 @@ export function Header({
       {...props}
     >
       <div className="inline-flex items-center">
-        <Link
-          to={Routes.Root}
-          aria-current={pathname === Routes.Root ? 'page' : undefined}
-        >
-          <img src={'/logo.svg'} alt="RAGFlow logo" className="size-10" />
-        </Link>
+        <div className="inline-flex items-center gap-4 min-w-0">
+          <Link
+            to={Routes.Root}
+            aria-current={pathname === Routes.Root ? 'page' : undefined}
+            className="brand-mark size-14"
+          >
+            <img
+              src={'/logo.svg'}
+              alt={`${APP_NAME} logo`}
+              className="size-9"
+            />
+          </Link>
+
+          <div className="min-w-0">
+            <div className="brand-title truncate">{APP_NAME}</div>
+            <div className="brand-subtitle hidden xl:block truncate">
+              {APP_SUBTITLE}
+            </div>
+          </div>
+        </div>
       </div>
 
       <GlobalNavbar />
@@ -93,7 +108,7 @@ export function Header({
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="flex items-center gap-1" variant="ghost">
+            <Button className="flex items-center gap-1" variant="outline">
               {t(`common.${camelCase(language)}`)}
 
               <LucideChevronDown className="size-4" />
@@ -114,7 +129,7 @@ export function Header({
 
         <Button
           asLink
-          variant="ghost"
+          variant="outline"
           size="icon"
           to="https://ragflow.io/docs/dev/category/user-guides"
           target="_blank"

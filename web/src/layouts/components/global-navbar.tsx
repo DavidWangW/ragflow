@@ -64,7 +64,7 @@ const GlobalNavbar = supportsCssAnchor
 
       return (
         <nav>
-          <ul className="relative flex items-center p-1 bg-bg-card rounded-full border border-border-button">
+          <ul className="tech-nav-shell relative flex items-center gap-1 rounded-full p-1.5">
             {menuItems.map(({ path, name, icon: Icon, ...props }) => {
               const isActive = path === activePath;
               const anchorName = `--${navbarAnchorNamePrefix}${path === Routes.Root ? '-root' : path.replace('/', '-')}`;
@@ -75,8 +75,8 @@ const GlobalNavbar = supportsCssAnchor
                     {...props}
                     to={path}
                     className={cn(
-                      'h-10 px-6 text-base inline-flex items-center justify-center',
-                      'hover:text-current focus-visible:text-current rounded-full transition-all',
+                      'h-11 px-6 text-[15px] font-medium tracking-[0.02em] inline-flex items-center justify-center rounded-full transition-all',
+                      'hover:text-current focus-visible:text-current',
                       isActive && '!text-bg-base',
                     )}
                     aria-current={isActive ? 'page' : undefined}
@@ -90,7 +90,7 @@ const GlobalNavbar = supportsCssAnchor
 
             <li
               className={cn(
-                'absolute -z-[1] bg-text-primary border-b-2 border-b-accent-primary rounded-full opacity-0',
+                'tech-nav-indicator absolute -z-[1] rounded-full opacity-0',
                 'transition-all',
                 hasAnyActive && 'opacity-100',
               )}
@@ -123,7 +123,7 @@ const GlobalNavbar = supportsCssAnchor
 
       return (
         <nav>
-          <ul className="flex items-center p-1 bg-bg-card rounded-full border border-border-button">
+          <ul className="tech-nav-shell flex items-center gap-1 rounded-full p-1.5">
             {menuItems.map(({ path, name, icon: Icon, ...props }) => {
               const isActive = path === activePath;
 
@@ -133,10 +133,9 @@ const GlobalNavbar = supportsCssAnchor
                     {...props}
                     to={path}
                     className={cn(
-                      'h-10 px-6 text-base inline-flex items-center justify-center',
-                      'hover:text-current focus-visible:text-current rounded-full transition-all',
-                      isActive &&
-                        '!text-bg-base bg-text-primary border-b-2 border-b-accent-primary',
+                      'h-11 px-6 text-[15px] font-medium tracking-[0.02em] inline-flex items-center justify-center rounded-full transition-all',
+                      'hover:text-current focus-visible:text-current',
+                      isActive && '!text-bg-base tech-nav-indicator',
                     )}
                     aria-label={t(name)}
                     aria-current={isActive ? 'page' : undefined}

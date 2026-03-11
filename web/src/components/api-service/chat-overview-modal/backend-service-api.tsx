@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { CopyToClipboardWithText } from '@/components/copy-to-clipboard';
+import { APP_NAME } from '@/constants/branding';
 import { useTranslate } from '@/hooks/common-hooks';
 
 const BackendServiceApi = ({ show }: { show(): void }) => {
@@ -11,7 +12,7 @@ const BackendServiceApi = ({ show }: { show(): void }) => {
     <Card>
       <CardHeader>
         <div className="flex items-center gap-4">
-          <CardTitle>RAGFlow API</CardTitle>
+          <CardTitle>{APP_NAME} API</CardTitle>
           <Button onClick={show}>{t('apiKey')}</Button>
         </div>
       </CardHeader>

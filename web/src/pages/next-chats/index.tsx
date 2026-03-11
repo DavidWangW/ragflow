@@ -49,7 +49,10 @@ export default function ChatList() {
   }, [isCreate, handleShowCreateModal, searchParams, setSearchParams]);
 
   return (
-    <section className="flex flex-col w-full flex-1" data-testid="chats-list">
+    <section
+      className="page-surface flex w-full flex-1 flex-col overflow-hidden"
+      data-testid="chats-list"
+    >
       {data.dialogs?.length <= 0 && !searchString && (
         <div className="flex w-full items-center justify-center h-[calc(100vh-164px)]">
           <EmptyAppCard

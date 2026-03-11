@@ -4,34 +4,34 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: 205 100% 99%;
+    --foreground: 210 46% 16%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 204 45% 96%;
+    --muted-foreground: 208 18% 45%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 210 46% 16%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 203 32% 86%;
+    --input: 203 32% 86%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card-foreground: 210 46% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 196 100% 46%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 203 48% 96%;
+    --secondary-foreground: 210 46% 16%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 202 80% 96%;
+    --accent-foreground: 210 46% 16%;
 
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --ring: 215 20.2% 65.1%;
+    --ring: 196 100% 46%;
 
     --radius: 0.5rem;
 
@@ -43,126 +43,124 @@
     --colors-background-neutral-standard: white;
     --colors-background-neutral-strong: rgba(226, 223, 246, 1);
 
-    --button-blue-text: rgb(22, 119, 255);
+    --button-blue-text: rgb(0, 138, 214);
 
-    --colors-outline-sentiment-primary: rgba(127, 105, 255, 1);
-    --colors-outline-neutral-strong: rgba(112, 107, 107, 0.15);
-    --colors-outline-neutral-standard: rgba(53, 51, 65, 0.1);
+    --colors-outline-sentiment-primary: rgba(0, 165, 245, 1);
+    --colors-outline-neutral-strong: rgba(27, 82, 120, 0.18);
+    --colors-outline-neutral-standard: rgba(27, 82, 120, 0.1);
 
-    --colors-text-core-standard: rgba(127, 105, 255, 1);
-    --colors-text-neutral-strong: rgba(17, 16, 23, 1);
-    --colors-text-neutral-standard: rgba(152, 148, 176, 1);
-    --colors-text-neutral-weak: rgba(170, 160, 197, 1);
+    --colors-text-core-standard: rgba(0, 138, 214, 1);
+    --colors-text-neutral-strong: rgba(15, 33, 52, 1);
+    --colors-text-neutral-standard: rgba(91, 112, 136, 1);
+    --colors-text-neutral-weak: rgba(128, 147, 168, 1);
     --colors-text-functional-danger: rgba(255, 81, 81, 1);
     --colors-text-inverse-strong: rgba(255, 255, 255, 1);
     --colors-text-persist-light: rgba(255, 255, 255, 1);
     --colors-text-inverse-weak: rgba(184, 181, 203, 1);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-background: 204 64% 98%;
+    --sidebar-foreground: 210 46% 16%;
+    --sidebar-primary: 196 100% 46%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 203 48% 96%;
+    --sidebar-accent-foreground: 210 46% 16%;
+    --sidebar-border: 203 32% 86%;
+    --sidebar-ring: 196 100% 46%;
 
     --background-inverse-strong: rgba(255, 255, 255, 0.15);
 
-    --background-badge: rgba(22, 22, 24, 0.5);
-    --text-badge: rgba(151, 154, 171, 1);
+    --background-badge: rgba(0, 138, 214, 0.12);
+    --text-badge: rgba(0, 93, 145, 1);
 
-    --text-title: rgba(22, 22, 24, 1);
-    --text-sub-title: rgba(151, 154, 171, 1);
+    --text-title: rgba(11, 31, 52, 1);
+    --text-sub-title: rgba(86, 109, 134, 1);
     --text-sub-title-invert: rgba(91, 93, 106, 1);
 
-    --background-header-bar: rgba(0, 0, 0, 0.05);
+    --background-header-bar: rgba(255, 255, 255, 0.7);
     --text-title-invert: rgba(255, 255, 255, 1);
-    --background-card: rgba(22, 22, 24, 0.05);
+    --background-card: rgba(255, 255, 255, 0.72);
 
-    --background-note: rgba(22, 22, 24, 0.1);
+    --background-note: rgba(224, 239, 249, 0.68);
 
-    --background-highlight: rgba(76, 164, 231, 0.1);
+    --background-highlight: rgba(0, 183, 255, 0.12);
 
-    --input-border: rgba(22, 22, 24, 0.2);
+    --input-border: rgba(27, 82, 120, 0.22);
 
-    --metallic: #46464a;
+    --metallic: #14344f;
 
-    --bg-title: #f6f6f7;
-    /* design colors */
+    --bg-title: #f5fafe;
 
-    --bg-base: #ffffff;
-    /* card color , dividing line */
-    --bg-card: rgba(0, 0, 0, 0.05);
-    --bg-component: #ffffff;
-    --bg-input: rgba(255, 255, 255, 0);
-    --bg-canvas: 246 246 247;
-    --bg-list: 246 246 247;
-    /* Button ,Body text, Input completed text */
+    --bg-base: #edf4fb;
+    --bg-card: rgba(255, 255, 255, 0.62);
+    --bg-component: rgba(255, 255, 255, 0.82);
+    --bg-input: rgba(255, 255, 255, 0.74);
+    --bg-canvas: 237 244 251;
+    --bg-list: 231 240 248;
 
-    /* #161618 */
-    --text-primary: 22 22 24;
-    --text-secondary: 117 120 122;
-    --text-disabled: #b2b5b7;
-    /* input placeholder color */
-    --text-input-tip: #b2b5b7;
-    /* Input  default color */
-    --border-default: rgba(0, 0, 0, 0.2);
-    /* Input accent color */
-    --border-accent: #000000;
-    --border-button: rgba(0, 0, 0, 0.1);
-    /* Regulators, parsing, switches, variables */
-    --accent-primary: 0 190 180;
-    /* Output Variables Box */
-    --bg-accent: rgba(76, 164, 231, 0.05);
+    --text-primary: 15 33 52;
+    --text-secondary: 86 109 134;
+    --text-disabled: #94a3b8;
+    --text-input-tip: #94a3b8;
+    --border-default: rgba(27, 82, 120, 0.16);
+    --border-accent: #0f2940;
+    --border-button: rgba(27, 82, 120, 0.1);
+    --accent-primary: 0 183 255;
+    --bg-accent: rgba(0, 183, 255, 0.08);
 
-    /* --state-success: #3ba05c; */
     --state-success: 59 160 92;
-    /* --state-warning: #767573; */
     --state-warning: 250 173 20;
     --state-error: 216 73 75;
 
-    --team-group: #5ab77e;
-    --team-member: #5c96c8;
-    --team-department: #8866d3;
-    --bg-group: rgba(90, 183, 126, 0.1);
-    --bg-member: rgba(92, 150, 200, 0.1);
-    --bg-department: rgba(136, 102, 211, 0.1);
+    --team-group: #2fbf9b;
+    --team-member: #2d7cff;
+    --team-department: #7f56ff;
+    --bg-group: rgba(47, 191, 155, 0.12);
+    --bg-member: rgba(45, 124, 255, 0.12);
+    --bg-department: rgba(127, 86, 255, 0.12);
 
-    /* --*-inverse: colors in dark mode */
-    --text-primary-inverse: 246 246 247;
-    --text-secondary-inverse: 178 181 183;
+    --surface-elevated: rgba(255, 255, 255, 0.74);
+    --surface-elevated-hover: rgba(255, 255, 255, 0.88);
+    --surface-shadow: 0 28px 80px rgba(16, 47, 79, 0.14);
+    --header-shadow: 0 18px 48px rgba(16, 47, 79, 0.12);
+    --hero-grid: rgba(19, 86, 130, 0.08);
+    --hero-glow-a: rgba(0, 183, 255, 0.18);
+    --hero-glow-b: rgba(78, 95, 255, 0.12);
+    --hero-badge-bg: rgba(255, 255, 255, 0.72);
+    --hero-badge-border: rgba(0, 183, 255, 0.16);
+
+    --text-primary-inverse: 232 244 255;
+    --text-secondary-inverse: 132 168 197;
   }
 
   .dark {
-    --background: rgba(11, 10, 18, 1);
-    --foreground: 213 31% 91%;
+    --background: 214 57% 7%;
+    --foreground: 210 40% 96%;
 
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
+    --muted: 214 45% 11%;
+    --muted-foreground: 210 18% 68%;
 
-    --accent: 216 34% 17%;
+    --accent: 210 56% 14%;
     --accent-foreground: 210 40% 98%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
+    --popover: 215 57% 8%;
+    --popover-foreground: 210 40% 96%;
 
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
+    --border: 210 45% 18%;
+    --input: 210 45% 18%;
 
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
+    --card: 215 57% 8%;
+    --card-foreground: 210 40% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
+    --primary: 194 100% 63%;
+    --primary-foreground: 216 56% 7%;
 
-    --secondary: 222.2 47.4% 11.2%;
+    --secondary: 214 44% 12%;
     --secondary-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --ring: 216 34% 17%;
+    --ring: 194 100% 63%;
 
     --radius: 0.5rem;
 
@@ -172,84 +170,93 @@
     --background-inverse-weak: rgba(184, 181, 203, 0.15);
     --background-inverse-weak-foreground: rgba(255, 255, 255, 1);
 
-    --background-core-standard: rgba(137, 126, 255, 1);
+    --background-core-standard: rgba(68, 214, 255, 1);
     --background-core-standard-foreground: rgba(255, 255, 255, 1);
 
     --background-inverse-strong: rgba(255, 255, 255, 0.15);
     --background-inverse-strong-foreground: rgba(255, 255, 255, 1);
 
-    --background-core-weak: rgb(101, 75, 248);
+    --background-core-weak: rgb(39, 132, 255);
     --background-core-weak-foreground: rgba(255, 255, 255, 1);
 
-    --background-badge: rgba(22, 22, 24, 0.5);
-    --text-badge: rgba(151, 154, 171, 1);
+    --background-badge: rgba(68, 214, 255, 0.12);
+    --text-badge: rgba(149, 230, 255, 1);
 
     --colors-background-inverse-standard: rgba(230, 227, 246, 0.15);
     --colors-background-inverse-strong: rgba(255, 255, 255, 0.8);
-    --colors-background-neutral-standard: rgba(11, 10, 18, 1);
-    --colors-background-neutral-strong: rgba(29, 26, 44, 1);
-    --colors-background-neutral-weak: rgba(17, 16, 23, 1);
+    --colors-background-neutral-standard: rgba(6, 17, 27, 1);
+    --colors-background-neutral-strong: rgba(10, 27, 42, 1);
+    --colors-background-neutral-weak: rgba(8, 21, 34, 1);
 
-    --colors-outline-sentiment-primary: rgba(146, 118, 255, 1);
-    --colors-outline-neutral-strong: rgba(255, 255, 255, 0.15);
-    --colors-outline-neutral-standard: rgba(230, 227, 246, 0.1);
+    --colors-outline-sentiment-primary: rgba(68, 214, 255, 1);
+    --colors-outline-neutral-strong: rgba(103, 183, 255, 0.18);
+    --colors-outline-neutral-standard: rgba(103, 183, 255, 0.1);
 
-    --colors-text-core-standard: rgba(137, 126, 255, 1);
-    --colors-text-neutral-strong: rgba(255, 255, 255, 1);
-    --colors-text-neutral-standard: rgba(230, 227, 246, 1);
-    --colors-text-neutral-weak: rgba(170, 160, 197, 1);
+    --colors-text-core-standard: rgba(68, 214, 255, 1);
+    --colors-text-neutral-strong: rgba(232, 244, 255, 1);
+    --colors-text-neutral-standard: rgba(164, 199, 225, 1);
+    --colors-text-neutral-weak: rgba(123, 156, 181, 1);
     --colors-text-functional-danger: rgba(255, 81, 81, 1);
     --colors-text-inverse-strong: rgba(17, 16, 23, 1);
     --colors-text-persist-light: rgba(255, 255, 255, 1);
     --colors-text-inverse-weak: rgba(84, 80, 106, 1);
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 214 46% 10%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 194 100% 63%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent: 214 39% 15%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-border: 214 39% 15%;
+    --sidebar-ring: 194 100% 63%;
 
-    --text-title: rgba(255, 255, 255, 1);
-    --text-sub-title: rgba(91, 93, 106, 1);
+    --text-title: rgba(232, 244, 255, 1);
+    --text-sub-title: rgba(132, 168, 197, 1);
     --text-sub-title-invert: rgba(151, 154, 171, 1);
-    --background-header-bar: rgba(11, 11, 12, 1);
+    --background-header-bar: rgba(8, 21, 34, 0.76);
 
     --text-title-invert: rgba(22, 22, 24, 1);
 
-    --background-card: rgba(255, 255, 255, 0.05);
-    --background-note: rgba(255, 255, 255, 0.05);
+    --background-card: rgba(10, 27, 42, 0.74);
+    --background-note: rgba(10, 27, 42, 0.7);
 
-    --background-highlight: rgba(76, 164, 231, 0.1);
+    --background-highlight: rgba(68, 214, 255, 0.12);
 
-    --input-border: rgba(255, 255, 255, 0.2);
+    --input-border: rgba(103, 183, 255, 0.2);
 
-    --metallic: #fafafa;
+    --metallic: #d5ecff;
 
-    --bg-title: #38383a;
-    /* design colors */
+    --bg-title: #0d1b2a;
 
-    --bg-base: #161618;
-    --bg-card: rgba(255, 255, 255, 0.05);
-    --bg-component: #202025;
-    --bg-input: rgba(255, 255, 255, 0.05);
-    --bg-canvas: 0 0 0;
-    --bg-list: 56 56 58;
+    --bg-base: #06111b;
+    --bg-card: rgba(10, 27, 42, 0.72);
+    --bg-component: rgba(9, 24, 38, 0.88);
+    --bg-input: rgba(103, 183, 255, 0.08);
+    --bg-canvas: 6 17 27;
+    --bg-list: 11 25 38;
 
-    /* #f6f6f7 */
-    --text-primary: 246 246 247;
-    --text-secondary: 178 181 183;
-    --text-disabled: #75787a;
-    --text-input-tip: #75787a;
-    --border-default: rgba(255, 255, 255, 0.2);
-    --border-accent: #ffffff;
-    --border-button: rgba(255, 255, 255, 0.1);
+    --text-primary: 232 244 255;
+    --text-secondary: 132 168 197;
+    --text-disabled: #64829f;
+    --text-input-tip: #64829f;
+    --border-default: rgba(103, 183, 255, 0.22);
+    --border-accent: #d5ecff;
+    --border-button: rgba(103, 183, 255, 0.14);
+    --accent-primary: 68 214 255;
+    --bg-accent: rgba(68, 214, 255, 0.1);
 
-    /* *-inverse: colors in light mode */
-    --text-primary-inverse: 22 22 24;
-    --text-secondary-inverse: 117 120 122;
+    --surface-elevated: rgba(9, 24, 38, 0.82);
+    --surface-elevated-hover: rgba(13, 32, 50, 0.9);
+    --surface-shadow: 0 28px 80px rgba(0, 0, 0, 0.46);
+    --header-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
+    --hero-grid: rgba(108, 195, 255, 0.08);
+    --hero-glow-a: rgba(68, 214, 255, 0.18);
+    --hero-glow-b: rgba(91, 111, 255, 0.18);
+    --hero-badge-bg: rgba(8, 21, 34, 0.72);
+    --hero-badge-border: rgba(68, 214, 255, 0.18);
+
+    --text-primary-inverse: 15 33 52;
+    --text-secondary-inverse: 86 109 134;
   }
 }
 
@@ -259,6 +266,19 @@
   }
   body {
     @apply bg-bg-base text-text-primary;
+    background-image:
+      radial-gradient(circle at 18% 0%, var(--hero-glow-a), transparent 26%),
+      radial-gradient(circle at 82% 0%, var(--hero-glow-b), transparent 28%),
+      linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.02)),
+      linear-gradient(var(--hero-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hero-grid) 1px, transparent 1px);
+    background-size:
+      auto,
+      auto,
+      auto,
+      28px 28px,
+      28px 28px;
+    background-attachment: fixed;
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
