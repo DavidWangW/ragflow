@@ -21,7 +21,9 @@ interface IProps {
 
 function Time({ time }: { time: string | number | undefined }) {
   return (
-    <p className="text-sm opacity-80 whitespace-nowrap">{formatDate(time)}</p>
+    <p className="whitespace-nowrap font-mono text-[11px] tracking-[0.04em] text-text-secondary">
+      {formatDate(time)}
+    </p>
   );
 }
 export function HomeCard({
@@ -44,11 +46,11 @@ export function HomeCard({
         onClick?.();
       }}
       tabIndex={0}
-      className="px-3 py-4 flex gap-3 items-start group h-full w-full hover:-translate-y-1 hover:border-accent-primary/20"
+      className="group h-full w-full items-start gap-3 rounded-[24px] px-4 py-4 hover:-translate-y-0.5 hover:border-accent-primary/20"
     >
       <div>
         <RAGFlowAvatar
-          className="w-[32px] h-[32px]"
+          className="h-9 w-9"
           avatar={data.avatar}
           name={data.name}
         />
@@ -61,7 +63,7 @@ export function HomeCard({
         >
           <CardTitle className="flex-1 inline-flex w-0 me-auto">
             <h3
-              className="flex-1 truncate text-base font-bold leading-snug"
+              className="flex-1 truncate text-[15px] font-semibold leading-snug"
               data-testid="agent-name"
             >
               {data.name}
@@ -78,17 +80,17 @@ export function HomeCard({
             <section className="flex justify-between"></section>
 
             <section className="flex flex-col gap-1 mt-1">
-              <div className="whitespace-nowrap overflow-hidden text-ellipsis text-text-secondary">
+              <div className="line-clamp-2 min-h-[40px] overflow-hidden text-sm leading-5 text-text-secondary">
                 {data.description}
               </div>
               <div className="flex justify-between items-center">
                 {data.release_time ? (
                   <section>
-                    <div className="flex items-center gap-2 text-sm opacity-80">
+                    <div className="flex items-center gap-2 text-xs text-text-secondary">
                       {`${t('flow.lastSavedAt')}:`}
                       <Time time={data.update_time}></Time>
                     </div>
-                    <div className="flex items-center gap-2 text-sm opacity-80">
+                    <div className="flex items-center gap-2 text-xs text-text-secondary">
                       {`${t('flow.publishedAt')}:`}
                       <Time time={data.release_time}></Time>
                     </div>

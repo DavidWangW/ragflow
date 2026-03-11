@@ -172,7 +172,7 @@ export function Sessions({ handleConversationCardClick }: SessionProps) {
       role="complementary"
       data-testid="chat-detail-sessions"
     >
-      <header className="flex items-center text-base justify-between gap-4">
+      <header className="flex items-center text-base justify-between gap-4 pb-4 border-b border-border-button">
         <div className="flex gap-3 items-center min-w-0">
           <RAGFlowAvatar
             avatar={data.icon}
@@ -216,7 +216,7 @@ export function Sessions({ handleConversationCardClick }: SessionProps) {
         </Button>
       </header>
 
-      <div className="flex justify-between items-center mb-4 pt-10">
+      <div className="flex justify-between items-center mb-4 pt-6">
         <div className="flex items-center gap-3">
           <span className="text-base font-bold">{t('chat.conversations')}</span>
           <data
@@ -293,6 +293,7 @@ export function Sessions({ handleConversationCardClick }: SessionProps) {
         <SearchInput
           onChange={handleInputChange}
           value={searchString}
+          className="bg-bg-input"
           data-testid="chat-detail-session-search"
         ></SearchInput>
       </div>
@@ -328,14 +329,16 @@ export function Sessions({ handleConversationCardClick }: SessionProps) {
                 <li
                   key={x.id}
                   className="
-                      group pr-3 flex items-center gap-1 rounded-lg
-                      aria-selected:bg-bg-card has-[>button:focus-visible]:bg-bg-card
+                      group pr-3 flex items-center gap-1 rounded-2xl border border-transparent
+                      hover:bg-bg-card hover:border-border-button
+                      aria-selected:bg-bg-card aria-selected:border-border-button
+                      has-[>button:focus-visible]:bg-bg-card has-[>button:focus-visible]:border-border-button
                     "
                   aria-selected={conversationId === x.id}
                 >
                   <button
                     type="button"
-                    className="focus-visible:outline-none px-3 py-2 text-left flex-1 truncate"
+                    className="focus-visible:outline-none px-3 py-2.5 text-left flex-1 truncate text-sm"
                     onClick={() => handleConversationCardClick(x.id, x.is_new)}
                     data-testid="chat-detail-session-item"
                     data-session-id={x.id}
