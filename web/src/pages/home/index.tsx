@@ -6,8 +6,8 @@ import { Datasets } from './datasets';
 const Home = () => {
   return (
     <PageContainer>
-      <article>
-        <header className="mb-8">
+      <article className="space-y-10">
+        <header>
           <NextBanner />
         </header>
 

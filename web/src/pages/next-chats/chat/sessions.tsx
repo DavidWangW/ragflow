@@ -168,7 +168,7 @@ export function Sessions({ handleConversationCardClick }: SessionProps) {
 
   return (
     <aside
-      className="p-5 w-[296px] flex flex-col"
+      className="surface-card m-5 mr-0 flex w-[312px] flex-col rounded-[28px] border border-border-button p-5"
       role="complementary"
       data-testid="chat-detail-sessions"
     >

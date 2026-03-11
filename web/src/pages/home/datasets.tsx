@@ -4,6 +4,7 @@ import { EmptyAppCard } from '@/components/empty/empty';
 import { RenameDialog } from '@/components/rename-dialog';
 import { HomeIcon } from '@/components/svg-icon';
 import { CardSkeleton } from '@/components/ui/skeleton';
+import { APP_SUBTITLE } from '@/constants/branding';
 import { useNavigatePage } from '@/hooks/logic-hooks/navigate-hooks';
 import { useFetchNextKnowledgeListByPage } from '@/hooks/use-knowledge-request';
 import { useTranslation } from 'react-i18next';
@@ -25,13 +26,18 @@ export function Datasets() {
   const { navigateToDatasetList } = useNavigatePage();
 
   return (
-    <section>
-      <header>
-        <h2 className="leading-8 text-2xl font-semibold mb-2.5">
-          {/* <IconFont name="data" className="size-8"></IconFont> */}
-          <HomeIcon imgClass="me-2.5" name="datasets" width={24} />
-          {t('header.dataset')}
-        </h2>
+    <section className="surface-card rounded-[28px] border border-border-button px-6 py-6">
+      <header className="mb-5 flex items-end justify-between gap-4">
+        <div>
+          <div className="lab-badge mb-3 w-fit">{APP_SUBTITLE}</div>
+          <h2 className="leading-8 text-2xl font-semibold mb-2.5">
+            <HomeIcon imgClass="me-2.5" name="datasets" width={24} />
+            {t('header.dataset')}
+          </h2>
+          <p className="text-sm text-text-secondary">
+            面向实验文档、工艺标准、设备说明与知识沉淀的统一数字化知识资产入口。
+          </p>
+        </div>
       </header>
 
       <div>

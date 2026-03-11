@@ -26,7 +26,6 @@ export function CardSineLineContainer({
   };
   const childArray = flattenChildren(children);
   const childCount = childArray.length;
-  console.log(childArray, childCount);
 
   return (
     <section

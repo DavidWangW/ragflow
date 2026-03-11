@@ -3,6 +3,7 @@ import { EmptyCardType } from '@/components/empty/constant';
 import { EmptyAppCard } from '@/components/empty/empty';
 import { HomeIcon } from '@/components/svg-icon';
 import { Segmented, SegmentedValue } from '@/components/ui/segmented';
+import { APP_TECH_LABEL } from '@/constants/branding';
 import { Routes } from '@/routes';
 import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -62,24 +63,28 @@ export function Applications() {
   };
 
   return (
-    <section className="mt-12">
-      <header className="flex justify-between items-center mb-2.5">
-        <h2 className="text-2xl font-semibold">
-          <HomeIcon
-            imgClass="me-2.5"
-            name={`${IconMap[val as keyof typeof IconMap]}`}
-            width={24}
-          />
-          {options.find((x) => x.value === val)?.label}
-        </h2>
+    <section className="surface-card rounded-[28px] border border-border-button px-6 py-6">
+      <header className="mb-5 flex flex-wrap justify-between items-center gap-4">
+        <div>
+          <div className="lab-badge mb-3 w-fit">{APP_TECH_LABEL}</div>
+          <h2 className="text-2xl font-semibold">
+            <HomeIcon
+              imgClass="me-2.5"
+              name={`${IconMap[val as keyof typeof IconMap]}`}
+              width={24}
+            />
+            {options.find((x) => x.value === val)?.label}
+          </h2>
+          <p className="mt-2 text-sm text-text-secondary">
+            基于统一知识底座快速访问聊天问答、检索应用、智能体与记忆能力。
+          </p>
+        </div>
 
         <Segmented
           buttonSize="sm"
           options={options}
           value={val}
           onChange={handleChange}
-          // className="bg-bg-card border border-border-button rounded-lg"
-          // activeClassName="bg-text-primary border-none rounded-lg"
         />
       </header>
 

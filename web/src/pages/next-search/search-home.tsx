@@ -1,6 +1,7 @@
 import { Input } from '@/components/originui/input';
 import Spotlight from '@/components/spotlight';
 import message from '@/components/ui/message';
+import { APP_NAME, APP_TAGLINE, APP_TECH_LABEL } from '@/constants/branding';
 import { IUserInfo } from '@/interfaces/database/user-setting';
 import { cn } from '@/lib/utils';
 import { Search } from 'lucide-react';
@@ -23,26 +24,31 @@ export default function SearchPage({
   userInfo?: IUserInfo;
   canSearch?: boolean;
 }) {
-  // const { data: userInfo } = useFetchUserInfo();
   const { t } = useTranslation();
-  return (
-    <section className="relative w-full flex transition-all justify-center items-center mt-[15vh]">
-      <div className="relative z-10 px-8 pt-8 flex  text-transparent flex-col justify-center items-center w-[780px]">
-        <h1
-          className={cn(
-            'text-4xl font-bold bg-gradient-to-l from-[#40EBE3] to-[#4A51FF] bg-clip-text',
-          )}
-        >
-          RAGFlow
-        </h1>
 
-        <div className="rounded-lg  text-primary text-xl sticky flex justify-center w-full transform scale-100 mt-8 p-6 h-[240px] border">
+  return (
+    <section className="relative mt-[15vh] flex w-full items-center justify-center transition-all">
+      <div className="relative z-10 flex w-[780px] flex-col items-center justify-center px-8 pt-8 text-transparent">
+        <div className="lab-badge mb-4">{APP_TECH_LABEL}</div>
+        <h1
+          className={cn('page-title-gradient text-center text-4xl font-bold')}
+        >
+          {APP_NAME}
+        </h1>
+        <p className="mt-4 max-w-2xl text-center text-sm text-text-secondary">
+          {APP_TAGLINE}
+        </p>
+
+        <div className="surface-card sticky mt-8 flex h-[240px] w-full scale-100 justify-center rounded-[28px] border border-border-button p-6 text-xl text-primary">
           {!isSearching && <Spotlight className="z-0" />}
-          <div className="flex flex-col justify-center items-center  w-2/3">
+
+          <div className="flex w-2/3 flex-col items-center justify-center">
             {!isSearching && (
               <>
-                <p className="mb-4 transition-opacity">👋 Hi there</p>
-                <p className="mb-10 transition-opacity">
+                <p className="mb-4 text-text-primary transition-opacity">
+                  你好，欢迎进入知识检索中心
+                </p>
+                <p className="mb-10 text-text-secondary transition-opacity">
                   {userInfo && (
                     <>
                       {t('search.welcomeBack')}, {userInfo.nickname}
@@ -52,10 +58,10 @@ export default function SearchPage({
               </>
             )}
 
-            <div className="relative w-full ">
+            <div className="relative w-full">
               <Input
                 placeholder={t('search.searchGreeting')}
-                className="w-full rounded-full py-7 px-4 pr-10 text-text-primary text-lg bg-bg-base delay-700"
+                className="delay-700 w-full rounded-full bg-bg-base px-4 py-7 pr-10 text-lg text-text-primary"
                 value={searchText}
                 onKeyUp={(e) => {
                   if (e.key === 'Enter') {
@@ -76,7 +82,7 @@ export default function SearchPage({
               />
               <button
                 type="button"
-                className="absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-text-primary p-2 text-bg-base shadow w-12"
+                className="absolute right-2 top-1/2 w-12 -translate-y-1/2 transform rounded-full bg-[linear-gradient(135deg,rgb(var(--accent-primary))_0%,#5668ff_100%)] p-2 text-bg-base shadow"
                 onClick={() => {
                   if (canSearch === false) {
                     message.warning(t('search.chooseDataset'));

@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
+import { APP_NAME, APP_SUBTITLE } from '@/constants/branding';
 import { cn } from '@/lib/utils';
 import { Routes } from '@/routes';
 import { getSystemVersion, logout } from '@/services/admin-service';
@@ -89,11 +90,22 @@ const AdminNavigationLayout = () => {
   });
 
   return (
-    <main className="w-screen h-screen flex flex-row px-6 pt-12 pb-6 dark:*:focus-visible:ring-white">
-      <aside className="w-72 mr-6 flex flex-col gap-6">
-        <div className="flex items-center mb-6">
-          <img className="size-8 mr-5" src="/logo.svg" alt="logo" />
-          <span className="text-xl font-bold">{t('admin.title')}</span>
+    <main className="w-screen h-screen flex flex-row px-6 pt-8 pb-6 dark:*:focus-visible:ring-white">
+      <aside className="page-surface w-80 mr-6 flex flex-col gap-6 px-6 py-6">
+        <div className="flex items-center gap-4 mb-2">
+          <div className="brand-mark flex size-14 items-center justify-center shrink-0">
+            <img className="size-9" src="/logo.svg" alt={APP_NAME} />
+          </div>
+          <div className="min-w-0">
+            <div className="brand-title truncate">{APP_NAME}</div>
+            <div className="brand-subtitle truncate">{APP_SUBTITLE}</div>
+          </div>
+        </div>
+
+        <div className="lab-badge w-fit">Admin Console</div>
+
+        <div className="text-sm text-text-secondary leading-6">
+          {t('admin.title')}
         </div>
 
         <nav>
@@ -104,7 +116,7 @@ const AdminNavigationLayout = () => {
                   to={it.path}
                   className={({ isActive }) =>
                     cn(
-                      'px-4 py-3 rounded-lg',
+                      'px-4 py-3 rounded-2xl',
                       'text-base w-full flex items-center justify-start text-text-secondary',
                       'hover:bg-bg-card focus:bg-bg-card focus-visible:bg-bg-card',
                       'hover:text-text-primary focus:text-text-primary focus-visible:text-text-primary',
@@ -144,7 +156,7 @@ const AdminNavigationLayout = () => {
         </div>
       </aside>
 
-      <section className="flex-1 h-full">
+      <section className="page-surface flex-1 h-full overflow-hidden">
         <Outlet />
       </section>
     </main>
