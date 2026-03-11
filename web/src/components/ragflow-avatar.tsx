@@ -65,13 +65,17 @@ export const RAGFlowAvatar = memo(
       <Avatar
         ref={ref}
         {...props}
-        className={cn(className, { 'rounded-md': !isPerson })}
+        className={cn(
+          'border border-border-button/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]',
+          className,
+          { 'rounded-md': !isPerson },
+        )}
       >
         <AvatarImage src={avatar} />
         <AvatarFallback
           className="flex items-center justify-center bg-gradient-to-b text-white"
           style={{
-            backgroundImage: `linear-gradient(to bottom, ${from}, ${to})`,
+            backgroundImage: `radial-gradient(circle at 30% 20%, rgba(255,255,255,0.22), transparent 35%), linear-gradient(135deg, ${from}, ${to})`,
           }}
           role="presentation"
           aria-hidden="true"

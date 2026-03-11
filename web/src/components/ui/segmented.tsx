@@ -91,7 +91,7 @@ export const Segmented = React.forwardRef<HTMLDivElement, SegmentedProps>(
       <div
         ref={ref}
         className={cn(
-          'flex items-center p-1 gap-2 bg-bg-card',
+          'tech-nav-shell flex items-center gap-1 p-1.5',
           segmentedVariants.round[rounded],
           segmentedVariants.size[sizeType],
           className,
@@ -109,7 +109,10 @@ export const Segmented = React.forwardRef<HTMLDivElement, SegmentedProps>(
               variant="static"
               className={cn(
                 {
-                  'text-text-primary bg-bg-base': selectedValue === actualValue,
+                  'text-bg-base bg-[linear-gradient(135deg,rgb(var(--accent-primary))_0%,#4d67ff_100%)] shadow-[0_12px_28px_rgba(0,112,214,0.18)]':
+                    selectedValue === actualValue,
+                  'text-text-secondary hover:text-text-primary':
+                    selectedValue !== actualValue,
                 },
                 itemClassName,
                 activeClassName && selectedValue === actualValue
