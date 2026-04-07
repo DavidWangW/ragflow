@@ -52,6 +52,8 @@ type LoginFormContentProps = {
   disablePasswordLogin?: boolean;
 };
 
+const loginHighlights = ['统一知识接入', '研发资料沉淀', '智能问答协作'];
+
 function LoginFormContent({
   isLoginPage,
   title,
@@ -70,12 +72,18 @@ function LoginFormContent({
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <div className="text-center mb-8">
-        <h2 className="text-xl font-semibold text-text-primary">
+      <div className="mb-8 text-center">
+        <div className="mx-auto mb-4 h-px w-14 bg-[linear-gradient(90deg,rgba(77,103,255,0),rgba(77,103,255,0.9),rgba(77,103,255,0))]" />
+        <h2 className="text-2xl font-semibold text-text-primary">
           {title === 'login' ? t('loginTitle') : t('signUpTitle')}
         </h2>
+        <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-text-secondary">
+          {title === 'login'
+            ? '进入统一知识工作台，继续你的研发资料检索、问答与协同流程。'
+            : '创建账号后即可开始沉淀知识资产并开展智能协同。'}
+        </p>
       </div>
-      <div className="login-panel w-full max-w-[540px] rounded-[28px] pt-14 pl-10 pr-10 pb-2">
+      <div className="login-panel w-full max-w-[560px] rounded-[32px] px-7 pb-4 pt-11 shadow-[0_24px_80px_rgba(6,21,41,0.18)] md:px-10 md:pb-5 md:pt-12">
         {!disablePasswordLogin && (
           <Form {...form}>
             <form
@@ -182,7 +190,7 @@ function LoginFormContent({
                 data-testid="auth-submit"
                 type="submit"
                 loading={loading}
-                className="bg-metallic-gradient border-b-[#00BEB4] border-b-2 hover:bg-metallic-gradient hover:border-b-[#02bcdd] w-full my-8"
+                className="my-8 h-12 w-full rounded-2xl border-b-2 border-b-[#00BEB4] bg-metallic-gradient text-sm font-semibold tracking-[0.02em] hover:border-b-[#02bcdd] hover:bg-metallic-gradient"
               >
                 {title === 'login' ? t('login') : t('continue')}
               </ButtonLoading>
@@ -191,7 +199,13 @@ function LoginFormContent({
         )}
 
         {title === 'login' && channels && channels.length > 0 && (
-          <div className={disablePasswordLogin ? 'py-8' : 'mt-3 border'}>
+          <div
+            className={
+              disablePasswordLogin
+                ? 'rounded-[24px] border border-border-button/80 bg-bg-card/40 p-4'
+                : 'mt-3 rounded-[24px] border border-border-button/80 bg-bg-card/40 p-4'
+            }
+          >
             {channels.map((item) => (
               <Button
                 variant={'transparent'}
@@ -367,33 +381,54 @@ const Login = () => {
       <div className=" h-[inherit] relative overflow-auto">
         <BgSvg isPaused />
 
-        <div className="z-20 absolute top-3 flex flex-col items-center mb-12 w-full text-text-primary">
-          <div className="flex items-center mb-4 w-full pl-10 pt-10 ">
-            <div className="brand-mark w-14 h-14 p-2 flex items-center justify-center mr-4">
-              <img
-                src={'/logo.svg'}
-                alt={APP_NAME}
-                className="size-8 cursor-pointer"
-              />
+        <div className="absolute inset-x-0 top-0 z-20 px-4 pt-4 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-[1320px] text-text-primary">
+            <div className="flex items-start justify-between gap-6">
+              <div className="flex items-center">
+                <div className="brand-mark mr-4 flex h-14 w-14 items-center justify-center p-2">
+                  <img
+                    src={'/logo.svg'}
+                    alt={APP_NAME}
+                    className="size-8 cursor-pointer"
+                  />
+                </div>
+                <div className="login-branding">
+                  <div className="brand-title text-xl">{APP_NAME}</div>
+                  <div className="brand-subtitle hidden md:block">
+                    {APP_SUBTITLE}
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden flex-wrap items-center justify-end gap-2 xl:flex">
+                {loginHighlights.map((item) => (
+                  <span key={item} className="info-pill">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="login-branding">
-              <div className="brand-title text-xl">{APP_NAME}</div>
-              <div className="brand-subtitle hidden md:block">
-                {APP_SUBTITLE}
+
+            <div className="mt-12 flex flex-col items-center text-center">
+              <div className="lab-badge mb-4 w-fit">{APP_TECH_LABEL}</div>
+              <h1 className="max-w-4xl text-[38px] font-semibold leading-tight md:text-[3.4rem]">
+                <span className="text-text-primary">欢迎进入 </span>
+                <span className="page-title-gradient">{APP_NAME}</span>
+              </h1>
+              <p className="mt-4 max-w-3xl px-6 text-center text-base leading-7 text-text-secondary">
+                {APP_TAGLINE}
+              </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-3 px-4 xl:hidden">
+                {loginHighlights.map((item) => (
+                  <span key={item} className="info-pill">
+                    {item}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
-          <h1 className="text-[36px] font-semibold text-center mb-2 page-title-gradient">
-            {APP_NAME}
-          </h1>
-          <p className="text-sm uppercase tracking-[0.22em] text-text-secondary text-center">
-            {APP_TECH_LABEL}
-          </p>
-          <p className="mt-3 max-w-3xl px-6 text-center text-base text-text-secondary">
-            {APP_TAGLINE}
-          </p>
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[1050px] px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 flex min-h-[980px] flex-col items-center justify-start px-4 pb-16 pt-[320px] sm:px-6 md:pt-[340px] lg:px-8 lg:pt-[380px]">
           {/* Login Form */}
           <FlipCard3D isLoginPage={isLoginPage}>
             <LoginFormContent

@@ -214,7 +214,7 @@ export default function Agent() {
   return (
     <section className="h-full" data-testid="agent-detail">
       <PageHeader>
-        <section>
+        <section className="min-w-0 flex-1">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -224,7 +224,12 @@ export default function Agent() {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>{agentDetail.title}</BreadcrumbPage>
+                <BreadcrumbPage
+                  className="max-w-none whitespace-normal break-all text-text-primary"
+                  title={agentDetail.title}
+                >
+                  {agentDetail.title}
+                </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -232,7 +237,7 @@ export default function Agent() {
             {t('flow.autosaved')} {time}
           </div>
         </section>
-        <div className="flex items-center gap-5">
+        <div className="flex shrink-0 flex-wrap items-center gap-5">
           <ButtonLoading
             variant={'secondary'}
             onClick={() => saveGraph()}

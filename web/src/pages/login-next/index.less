@@ -76,3 +76,14 @@
   transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-glow,
+  .animate-highlight {
+    animation: none !important;
+  }
+
+  .transform-style-3d {
+    transition-duration: 0ms;
+  }
+}

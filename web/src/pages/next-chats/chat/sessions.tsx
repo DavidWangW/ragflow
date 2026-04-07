@@ -173,14 +173,19 @@ export function Sessions({ handleConversationCardClick }: SessionProps) {
       data-testid="chat-detail-sessions"
     >
       <header className="flex items-center text-base justify-between gap-4 pb-4 border-b border-border-button">
-        <div className="flex gap-3 items-center min-w-0">
+        <div className="flex flex-1 min-w-0 items-start gap-3">
           <RAGFlowAvatar
             avatar={data.icon}
             name={data.name}
             className="size-8"
           />
 
-          <span className="flex-1 truncate">{data.name}</span>
+          <span
+            className="flex-1 whitespace-normal break-all text-sm font-medium leading-5 text-text-primary"
+            title={data.name}
+          >
+            {data.name}
+          </span>
         </div>
 
         <Tooltip>

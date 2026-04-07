@@ -74,7 +74,7 @@ export function SideBar({ refreshCount }: PropType) {
   return (
     <aside className="page-surface relative w-full space-y-8 px-5 py-6">
       <header
-        className="grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-3"
+        className="grid min-w-0 grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-3"
         style={{
           gridTemplateAreas: '"avatar title" "avatar stats"',
         }}
@@ -87,7 +87,8 @@ export function SideBar({ refreshCount }: PropType) {
         />
 
         <h3
-          className="text-lg font-semibold line-clamp-1 text-text-primary text-ellipsis overflow-hidden"
+          className="min-w-0 whitespace-normal break-all text-lg font-semibold leading-6 text-text-primary"
+          title={data.name}
           style={{ gridArea: 'title' }}
         >
           {data.name}

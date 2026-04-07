@@ -41,29 +41,36 @@ export function HomeCard({
       as="article"
       data-testid={testId}
       data-agent-name={data.name}
+      role="button"
       onClick={() => {
         // navigateToSearch(data?.id);
         onClick?.();
       }}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onClick?.();
+        }
+      }}
       tabIndex={0}
-      className="group h-full w-full items-start gap-3 rounded-[24px] px-4 py-4 hover:-translate-y-0.5 hover:border-accent-primary/20"
+      className="group flex h-full w-full min-w-0 cursor-pointer items-start gap-4 rounded-[26px] border border-border-button/80 px-5 py-5 transition-all duration-200 ease-out hover:border-accent-primary/30 hover:shadow-[0_20px_44px_rgba(6,21,41,0.14)] focus-visible:border-accent-primary/40 focus-visible:shadow-[0_0_0_3px_rgba(77,103,255,0.14)]"
     >
-      <div>
+      <div className="shrink-0">
         <RAGFlowAvatar
-          className="h-9 w-9"
+          className="h-10 w-10 rounded-xl"
           avatar={data.avatar}
           name={data.name}
         />
       </div>
 
-      <div className="flex-1 w-0">
+      <div className="min-w-0 flex-1">
         <CardHeader
           as="header"
-          className="p-0 flex-1 flex flex-row items-center gap-2 space-y-0"
+          className="flex min-w-0 flex-row items-center gap-2 p-0 space-y-0"
         >
-          <CardTitle className="flex-1 inline-flex w-0 me-auto">
+          <CardTitle className="me-auto inline-flex min-w-0 flex-1 items-center gap-2">
             <h3
-              className="flex-1 truncate text-[15px] font-semibold leading-snug"
+              className="flex-1 truncate text-base font-semibold leading-snug"
               data-testid="agent-name"
             >
               {data.name}
@@ -75,32 +82,28 @@ export function HomeCard({
           <div>{moreDropdown}</div>
         </CardHeader>
 
-        <CardContent className="p-0">
-          <div className="flex flex-col justify-between gap-1 flex-1 h-full w-[calc(100%-50px)]">
-            <section className="flex justify-between"></section>
-
-            <section className="flex flex-col gap-1 mt-1">
-              <div className="line-clamp-2 min-h-[40px] overflow-hidden text-sm leading-5 text-text-secondary">
-                {data.description}
-              </div>
-              <div className="flex justify-between items-center">
-                {data.release_time ? (
-                  <section>
-                    <div className="flex items-center gap-2 text-xs text-text-secondary">
-                      {`${t('flow.lastSavedAt')}:`}
-                      <Time time={data.update_time}></Time>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-text-secondary">
-                      {`${t('flow.publishedAt')}:`}
-                      <Time time={data.release_time}></Time>
-                    </div>
-                  </section>
-                ) : (
-                  <Time time={data.update_time}></Time>
-                )}
-                {sharedBadge}
-              </div>
-            </section>
+        <CardContent className="mt-3 p-0">
+          <div className="flex min-w-0 flex-col justify-between gap-2">
+            <div className="line-clamp-2 min-h-[44px] overflow-hidden text-[13px] leading-5 text-text-secondary">
+              {data.description}
+            </div>
+            <div className="flex items-center justify-between gap-3">
+              {data.release_time ? (
+                <section className="min-w-0">
+                  <div className="flex items-center gap-2 text-xs text-text-secondary">
+                    {`${t('flow.lastSavedAt')}:`}
+                    <Time time={data.update_time}></Time>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-text-secondary">
+                    {`${t('flow.publishedAt')}:`}
+                    <Time time={data.release_time}></Time>
+                  </div>
+                </section>
+              ) : (
+                <Time time={data.update_time}></Time>
+              )}
+              {sharedBadge}
+            </div>
           </div>
         </CardContent>
       </div>

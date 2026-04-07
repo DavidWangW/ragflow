@@ -76,8 +76,16 @@ html.dark .app-shell::before {
 .app-header-shell,
 .page-surface,
 .surface-card {
-  background: var(--surface-elevated);
-  box-shadow: var(--surface-shadow);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0) 18%
+    ),
+    var(--surface-elevated);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    var(--surface-shadow);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
 }
@@ -94,10 +102,25 @@ html.dark .app-shell::before {
 
 .surface-card {
   border-color: var(--border-button);
+  transition:
+    transform 220ms ease-out,
+    box-shadow 220ms ease-out,
+    background 220ms ease-out,
+    border-color 220ms ease-out;
 }
 
 .surface-card:hover {
-  background: var(--surface-elevated-hover);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 18%
+    ),
+    var(--surface-elevated-hover);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 22px 56px rgba(6, 21, 41, 0.16),
+    var(--surface-shadow);
   transform: translateY(-2px);
 }
 
@@ -139,15 +162,39 @@ html.dark .app-shell::before {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.45rem 0.8rem;
+  padding: 0.42rem 0.78rem;
   border-radius: 999px;
   border: 1px solid var(--hero-badge-border);
   background: var(--hero-badge-bg);
   color: rgb(var(--text-primary));
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.info-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.58rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.68);
+  color: rgb(var(--text-primary));
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+html.dark .info-pill {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .page-title-gradient {
@@ -200,6 +247,19 @@ html.dark .app-shell::before {
   border: 1px solid var(--border-button);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .surface-card,
+  .page-surface,
+  .tech-nav-shell,
+  .login-panel {
+    transition: none !important;
+  }
+
+  .surface-card:hover {
+    transform: none;
+  }
 }
 
 ::selection {

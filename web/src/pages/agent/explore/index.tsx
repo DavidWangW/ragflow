@@ -41,21 +41,26 @@ export default function AgentExplore() {
   return (
     <section className="h-full flex flex-col">
       <PageHeader>
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink onClick={handleBackToAgent}>
-                {t('header.flow')}
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>
-                {agentDetail?.title || t('explore.title')}
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <div className="min-w-0 flex-1">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink onClick={handleBackToAgent}>
+                  {t('header.flow')}
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage
+                  className="max-w-none whitespace-normal break-all text-text-primary"
+                  title={agentDetail?.title || t('explore.title')}
+                >
+                  {agentDetail?.title || t('explore.title')}
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
       </PageHeader>
 
       <section className="flex flex-1 min-h-0">
